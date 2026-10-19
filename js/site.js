@@ -263,9 +263,9 @@
         const sec = video.closest(".hero, .band");
         if (sec) sec.classList.add("is-fallback");
       });
-      if (video.dataset.lazy) {
+      if ("lazy" in video.dataset) {
         const io = new IntersectionObserver((entries) => {
-          entries.forEach((en) => { if (en.isIntersecting) kick(); });
+          entries.forEach((en) => { if (en.isIntersecting) kick(); else video.pause(); });
         }, { rootMargin: "200px" });
         io.observe(video);
       } else {
@@ -436,7 +436,7 @@
 
   function cardFigure(p, alt) {
     if (!p.photo) return '<figure><div class="empty">제품 사진 준비 중</div></figure>';
-    return '<figure><img src="' + safe(p.photo) + '" alt="' + safe(alt == null ? p.title : alt) + '"></figure>';
+    return '<figure><img src="' + safe(p.photo) + '" alt="' + safe(alt == null ? p.title : alt) + '" loading="lazy" decoding="async"></figure>';
   }
 
   function drawProducts() {
@@ -844,6 +844,9 @@
     const search = document.getElementById("q");
     if (search) search.addEventListener("input", drawProducts);
     contactForm();
+    document.querySelectorAll("[data-scroll]").forEach((btn) => {
+      btn.addEventListener("click", () => document.getElementById(btn.dataset.scroll)?.scrollIntoView({ behavior: "smooth" }));
+    });
     loadProducts().catch(() => {
       const grid = document.getElementById("productGrid");
       if (grid) grid.innerHTML = '<p class="empty">제품 정보를 불러오지 못했습니다. 페이지를 웹 서버로 열어 주세요.</p>';
