@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>견적 문의 | 밝은내일</title>
+<meta name="description" content="밝은내일 제품 소싱과 기업 납품 견적을 문의합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-header="solid">
+<div id="chrome-header"></div>
+<section class="page-hero" id="list">
+  <div class="frame stack two">
+    <div class="inview">
+      <p class="t-kicker">Contact</p>
+      <h1 class="t-h">필요한 제품,<br>문의해 주세요</h1>
+      <p class="t-lead muted">필요한 품목을 함께 적어 주세요. 제품 페이지에서 담은 항목은 메일 내용에 포함됩니다.</p>
+      <p style="font-weight:800">q886654@naver.com</p>
+    </div>
+    <div class="inview">
+      <h2 class="t-card">문의할 제품<span id="quoteCount"></span></h2>
+      <div id="quoteList"></div>
+      <form class="form" id="quoteForm" style="margin-top:28px">
+        <div class="form-row">
+          <input id="company" required placeholder="회사명 / 기관명">
+          <input id="name" required placeholder="담당자명">
+        </div>
+        <div class="form-row">
+          <input id="phone" required placeholder="연락처">
+          <input id="email" type="email" required placeholder="회신 이메일">
+        </div>
+        <textarea id="detail" placeholder="제품명, 규격, 수량, 납기, 설치 장소"></textarea>
+        <label class="check"><input type="checkbox" required><span>작성한 내용으로 견적을 요청합니다.</span></label>
+        <button class="btn dark" type="submit">견적 문의하기</button>
+      </form>
+      <div id="quoteDone" class="quote-done" hidden>
+        <h3>견적 문의를 정리했습니다</h3>
+        <p>메일 앱이 열리지 않으면 아래 내용을 복사해 q886654@naver.com 으로 보내 주세요.</p>
+        <pre id="quotePlain"></pre>
+        <p style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn dark" type="button" id="openMail">메일 앱에서 다시 열기</button>
+          <button class="btn" type="button" id="copyQuote">내용 복사</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="chrome-footer"></div>
+<script src="js/site.js"></script>
+</body>
+</html>

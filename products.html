@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제품 검색 | 밝은내일</title>
+<meta name="description" content="밝은내일 취급 제품을 검색하고 상세 규격과 견적 목록을 확인합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-header="solid" data-cat="전체">
+<div id="chrome-header"></div>
+<section class="page-hero">
+  <div class="frame">
+    <p class="t-kicker">Products</p>
+    <h1 class="t-h" data-en="Find a product">제품을 찾아보세요</h1>
+    <p class="t-lead muted" data-en="Search by name, English name, or product code. Specifications and installation notes are on each product page.">품목명, 영문명, 제품코드로 찾을 수 있습니다. 상세 페이지에서 규격과 설치 방법을 확인하세요.</p>
+    <div class="tools">
+      <input id="q" type="search" placeholder="품목명, 영문명, 제품코드" aria-label="제품 검색">
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="pgrid" id="productGrid"></div>
+    <p style="margin-top:36px"><a class="btn dark" href="catalog.html" data-en="Open the catalogue">종합 카탈로그 열기</a></p>
+  </div>
+</section>
+<div id="chrome-footer"></div>
+<script src="js/site.js"></script>
+</body>
+</html>
